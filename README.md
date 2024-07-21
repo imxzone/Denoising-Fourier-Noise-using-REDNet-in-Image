@@ -1,1 +1,1 @@
-# Denoising-Fourier-Noise-using-REDNet-in-Image
+# Denoising Fourier Noise using REDNet in Image
