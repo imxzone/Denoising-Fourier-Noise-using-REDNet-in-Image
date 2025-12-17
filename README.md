@@ -8,7 +8,7 @@
 **Title:** Denoising Fourier Noise using REDNet in Image  
 **Authors:** Thinh Duong Tan Hung, Loc Phan Minh. 
 **Conference:** ICIIT 2024  
-**DOI:** https://doi.org/10.1145/3654522.3654569 :contentReference[oaicite:0]{index=0}
+**DOI:** https://doi.org/10.1145/3654522.3654569
 
 This repository is a **technical study and response** to the above paper.  
 No source code is provided in this repository.
