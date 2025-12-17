@@ -1,48 +1,97 @@
 <h1 align="center">Denoising Fourier Noise using REDNet in Image</h1>
 
-## 📄 Paper Reference
-This repository is a simple implementation and reproduction of the paper:
-
-**Denoising Fourier Noise using REDNet in Image**  
-Thinh Duong Tan Hung et al., ICIIT 2024  
-https://doi.org/10.1145/3654522.3654569 :contentReference[oaicite:0]{index=0}
+📘 Paper Review & Technical Response
 
 ---
 
-## 🎯 Objective
-The goal of this project is to reproduce and understand the effectiveness of  
-**Residual Encoder-Decoder Network (REDNet)** for removing **Fourier (frequency-domain) noise** from images.
+## 📄 Paper Information
+**Title:** Denoising Fourier Noise using REDNet in Image  
+**Authors:** Thinh Duong Tan Hung, Loc Phan Minh. 
+**Conference:** ICIIT 2024  
+**DOI:** https://doi.org/10.1145/3654522.3654569 :contentReference[oaicite:0]{index=0}
 
-This repository is created as:
-- A learning-based response to the original paper
-- A simple academic reproduction
-- A reference implementation for image denoising tasks
-
----
-
-## 🧠 Method Overview
-- Apply **Fourier Noise** to clean images
-- Train a **REDNet (Residual Encoder-Decoder Network)** model
-- Use **skip connections** to preserve spatial and frequency information
-- Optimize using **MSE loss** and **Adam optimizer**
-
-**Input size:** `(150, 150, 3)`  
-**Loss function:** Mean Squared Error (MSE)
+This repository is a **technical study and response** to the above paper.  
+No source code is provided in this repository.
 
 ---
 
-## 🏗️ Model Architecture
-- Encoder: 5 Conv2D layers
-- Decoder: 5 Conv2DTranspose layers
-- Skip connections between encoder and decoder layers
-- Residual learning strategy
-
-The architecture follows the REDNet design proposed in the paper.
+## 🎯 Purpose of This Repository
+- Study and understand **Fourier Noise** in images
+- Analyze the **REDNet (Residual Encoder-Decoder Network)** architecture
+- Summarize experimental settings and results
+- Serve as an **academic response / reading note / research portfolio**
 
 ---
 
-## 🚀 How to Run
+## 🧠 Problem Overview
+Fourier noise is a type of frequency-domain noise that significantly degrades image quality.
+Traditional FFT-based denoising methods require manual threshold tuning and lack adaptability.
 
-### 1️⃣ Install dependencies
-```bash
-pip install -r requirements.txt
+The paper proposes using **REDNet**, a deep learning-based residual encoder-decoder network,
+to automatically learn and remove Fourier noise from images.
+
+---
+
+## 🏗️ Method Summary
+
+### Fourier Noise Generation
+- Images are transformed into the frequency domain
+- Artificial Fourier noise is applied
+- Noisy images are converted back to spatial domain
+
+### REDNet Architecture
+- Encoder–Decoder structure
+- Symmetric skip connections
+- Residual learning between noisy and clean images
+- Input size: `(150 × 150 × 3)`
+- Loss function: **Mean Squared Error (MSE)**
+
+---
+
+## 🧪 Experimental Setup
+- Dataset: Landscape images
+- Total images: 1000
+- Data split:
+  - Training: 72%
+  - Validation: 8%
+  - Testing: 20%
+- Optimizer: Adam
+- Learning rate: 0.0001
+
+---
+
+## 📊 Results (Reported in Paper)
+
+| Metric | Value |
+|------|------|
+| PSNR | ~5.72 dB |
+| MSE  | ~104.52 |
+
+The results indicate that REDNet is effective in reducing Fourier noise,
+although the output images remain slightly blurry.
+
+---
+
+## ⚠️ Limitations Discussed
+- Image sharpness is not fully preserved
+- Residual noise artifacts remain
+- Performance limited by dataset size and model complexity
+
+---
+
+## 🔮 Future Directions
+- Combine REDNet with super-resolution models (e.g., LapSRN)
+- Apply post-processing (sharpening, filtering)
+- Train with higher-resolution datasets
+- Explore domain-specific Fourier noise patterns
+
+---
+
+## 🧑‍🎓 Author’s Note
+This repository is created for:
+- Academic learning
+- Research understanding
+- Portfolio demonstration
+
+All credits belong to the original authors.
+
